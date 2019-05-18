@@ -30,7 +30,7 @@
       "destination": "context"
     },
     {
-      "name": "shortname",
+      "name": "short_name",
       "destination": "context"
     }
   ]
