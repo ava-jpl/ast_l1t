@@ -1,4 +1,4 @@
-M hysds/pge-base:latest
+FROM hysds/pge-base:latest
 MAINTAINER jlinick "Justin.P.Linick@jpl.nasa.gov"
 LABEL description="Ingest products from metadata"
 
