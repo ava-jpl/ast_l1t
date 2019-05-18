@@ -46,6 +46,7 @@ def ingest_product(shortname, starttime, endtime, location, metadata):
         print('product with id: {} already exists. Exiting.'.format(prod_id))
         return
     #attempt to localize product
+    print('attempting to localize product: {}'.format(prod_id))
     localize_product(prod_id, metadata)
     # generate product
     dst, met = gen_jsons(prod_id, starttime, endtime, location, metadata)
@@ -86,7 +87,7 @@ def localize_product(prod_id, metadata):
         os.mkdir(prod_id)
     for obj in metadata.get('links', []):
         url = obj.get('href', False)
-        extension = os.path.splitext(url)[1]
+        extension = os.path.splitext(url)[1].strip('.')
         if extension in ALLOWED_EXTENSIONS:
             product_path = os.path.join(prod_id, '{}.{}'.format(prod_id, extension))
             if not os.path.exists(product_path):
