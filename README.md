@@ -8,3 +8,6 @@ There is 1 associated jobs:
 -----
 Job is of type iteration. It takes in an input MET-AST_L1T product. It localizes and publishes the associated product if it does not exist on GRQ.
 
+L1T product spec is the followingc:
+
+    AST_L1T-<sensing_start_datetime>_<sensing_end_datetime>-<version_number>
